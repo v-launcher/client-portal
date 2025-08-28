@@ -34,12 +34,19 @@ This repository includes a Chrome extension that allows external web pages to co
 - Listens for external messages from authorized web pages
 - Supports multiple message types (`ping`, `getData`, `sendData`)
 - Secure communication with pre-defined domains
+- **Auto-update support** with `update.xml` manifest
 
 ### Installation
 1. Open Chrome and go to `chrome://extensions/`
 2. Enable "Developer mode"
 3. Click "Load unpacked" and select the `chrome-extension` folder
 4. The extension will be ready to receive messages
+
+### Auto-Updates
+The extension includes an `update.xml` file for automatic updates when hosted:
+- Update manifest is deployed to GitHub Pages at `/chrome-extension/update.xml`
+- Extension checks for updates automatically when `update_url` is configured
+- Replace `{extension-id}` placeholder in `update.xml` with actual extension ID after installation
 
 See the [Chrome Extension README](chrome-extension/README.md) for detailed usage instructions.
 

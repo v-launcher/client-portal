@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "description": "Chrome extension that listens to external messages for the Client Portal PWA",
   "permissions": [],
+  "update_url": "https://v-launcher.github.io/client-portal/chrome-extension/update.xml",
   "background": {
     "service_worker": "background.js"
   },
