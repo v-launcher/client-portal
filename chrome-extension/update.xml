@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Chrome Extension Update Manifest for Client Portal Extension -->
+<!-- 
+  This file enables automatic updates for the Client Portal Chrome Extension.
+  
+  Instructions:
+  1. Replace {extension-id} with the actual extension ID after installation
+  2. Ensure the .crx file is built and available at the specified URL
+  3. Update the version number when releasing new versions
+  
+  The extension ID can be found at chrome://extensions/ after installation.
+-->
+<gupdate xmlns='http://www.google.com/update2/response' protocol='2.0'>
+  <app appid='{extension-id}'>
+    <updatecheck codebase='https://v-launcher.github.io/client-portal/chrome-extension/client-portal-extension.crx' version='1.0.0' />
+  </app>
+</gupdate>

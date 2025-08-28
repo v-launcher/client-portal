@@ -104,8 +104,46 @@ The extension uses Manifest V3 and consists of:
 - All message handling is logged to the console for debugging
 - No sensitive data should be transmitted through this messaging system
 
+## Auto-Updates
+
+For self-hosted installations, the extension includes an `update.xml` file that enables automatic updates:
+
+1. The extension checks for updates using the update manifest at `update.xml`
+2. When a new version is available, Chrome will automatically download and install it
+3. The update URL points to the GitHub Pages deployment for easy distribution
+
+### Setting up Auto-Updates
+
+1. Host the extension on a web server (like GitHub Pages)
+2. Update the `update.xml` file with the correct extension ID
+3. Ensure the `.crx` package file is accessible at the specified URL
+4. Users who install from the hosted location will receive automatic updates
+
+### Building Extension Package
+
+To create a `.crx` package for distribution:
+
+1. **Manual Method**: Use Chrome's extension developer tools
+   - Go to `chrome://extensions/`
+   - Enable "Developer mode"
+   - Click "Pack extension"
+   - Select the `chrome-extension` folder
+   - This generates a `.crx` file and `.pem` private key
+
+2. **Command Line Method**: Use Chrome command line tools
+   ```bash
+   # Example command (requires Chrome/Chromium installed)
+   google-chrome --pack-extension=/path/to/chrome-extension --pack-extension-key=/path/to/private-key.pem
+   ```
+
+3. **Update the update.xml file**:
+   - Replace `{extension-id}` with the actual extension ID
+   - Ensure the `.crx` file is uploaded to the correct URL
+   - Update version number when releasing new versions
+
 ## Troubleshooting
 
 1. **Extension not receiving messages**: Check that the sending domain is listed in `externally_connectable.matches`
 2. **Console errors**: Open Chrome DevTools > Extensions > Service Worker to view background script logs
 3. **Installation issues**: Ensure all files are in the correct directory structure
+4. **Update issues**: Verify the update.xml file is accessible and points to a valid .crx file
