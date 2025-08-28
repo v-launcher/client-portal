@@ -1,11 +1,30 @@
-# React + Vite
+# React + Vite PWA
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules, configured as a Progressive Web App (PWA).
+
+## GitHub Pages Deployment
+
+This PWA is automatically deployed to GitHub Pages using GitHub Actions. The app is available at: [https://v-launcher.github.io/client-portal/](https://v-launcher.github.io/client-portal/)
+
+### Deployment Process
+
+1. On every push to the `main` branch, a GitHub Actions workflow builds the app
+2. The built files are automatically deployed to GitHub Pages
+3. The PWA includes service worker caching for offline functionality
+
+## Development
 
 Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+### Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build locally
+- `npm run lint` - Run ESLint
 
 ## Expanding the ESLint configuration
 
