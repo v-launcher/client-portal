@@ -26,6 +26,23 @@ Currently, two official plugins are available:
 - `npm run preview` - Preview production build locally
 - `npm run lint` - Run ESLint
 
+## Chrome Extension
+
+This repository includes a Chrome extension that allows external web pages to communicate with the Client Portal PWA. The extension is located in the `chrome-extension/` folder.
+
+### Features
+- Listens for external messages from authorized web pages
+- Supports multiple message types (`ping`, `getData`, `sendData`)
+- Secure communication with pre-defined domains
+
+### Installation
+1. Open Chrome and go to `chrome://extensions/`
+2. Enable "Developer mode"
+3. Click "Load unpacked" and select the `chrome-extension` folder
+4. The extension will be ready to receive messages
+
+See the [Chrome Extension README](chrome-extension/README.md) for detailed usage instructions.
+
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
